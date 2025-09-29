@@ -13,7 +13,7 @@
   margin: (rest: 2.5cm),
   spacing: .65em,
 ) = {
-  // line(length: 100%)
+  line(length: 100%)
   
   v(spacing * 2)
   text(size: 20pt, weight: "bold", title)
