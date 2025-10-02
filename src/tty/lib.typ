@@ -88,23 +88,22 @@
   )
 
   // <------------------=| Main content |=------------------->
-  if body == none {
-    return
-  }
-
-  paperheader(
-    title: title,
-    date: date,
-    author: author,
-    group: group,
-    email: email,
-    course: course,
-    topic: topic,
-  )
-  body
-
-  if bibliography != none {
-    pagebreak()
-    bibliography
-  }
+  if body != none {
+    paperheader(
+      title: title,
+      date: date,
+      author: author,
+      group: group,
+      email: email,
+      course: course,
+      topic: topic,
+    )
+    
+    body
+    
+    if bibliography != none {
+      pagebreak()
+      bibliography
+    }
+  }  
 }

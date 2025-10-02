@@ -4,12 +4,12 @@
 #import "tty/lib.typ": *
 
 #show: tty.with(
-  title: [Homework 2. \ Forces and  Motion ],
+  title: [XXXXXXXXXX],
   author: "Almir Avkhadiev",
   group: "CSE07",
   email: "a.avkhadiev@innopolis.university",
-  course: [Physics I (Mechanics)],
-  topic: [Forces and motion, Kinematics],
+  course: [XXXXXXXXXXXXX],
+  topic: [XXXXXXXXXXXXX],
   fontsize: 11pt,
   bibliography: none,
 )
