@@ -1,8 +1,8 @@
 // (c) 2025 Almir Avhadiev <almir.avhadiev@gmail.com>
 
-#import "@preview/icu-datetime:0.1.2": fmt-date
+#import "@preview/icu-datetime:0.2.0" as icu
 
-#let paper-header(
+#let paperheader(
   title: none,
   date: datetime.today(),
   author: none,
@@ -11,31 +11,67 @@
   course: none,
   topic: none,
   margin: (rest: 2.5cm),
-  spacing: .65em,
+  leading: .65em,
 ) = {
   line(length: 100%)
   
-  v(spacing * 2)
-  text(size: 20pt, weight: "bold", title)
-  h(1fr)
-  text(style: "italic", (author, group).join(", "))
-  linebreak()
-  text(font: "New Computer Modern")[
-    #fmt-date(date, locale: "en", length: "medium")
-  ]
-  h(1fr)
-  text(style: "italic", email)
+  v(1.2em)
   
-  v(spacing * 2)
-    grid(
-      rows: 2,
-      columns: 2,
-      row-gutter: .65em,
-      column-gutter: .5em,
-      [#text(style: "italic")[Course:]], [#course],
-      [#text(style: "italic")[Topic:]], [#topic],
-    )
-  v(spacing * 2)
+  // grid(
+  //   columns: (1fr, 1fr),
+  //   align: (left + horizon, right),
+  //   text(size: 2em, weight: "bold", title),
+  //   grid(
+  //     columns: 2,
+  //     align: (left, left),
+  //     gutter: .55em,
+  //     [Date: ], [#icu.fmt(date, locale: "en-US", length: "long")],
+  //     [Name: ], [#author],
+  //     [Group: ], [#group],
+  //     [Email: ], [#email],
+  //   )
+  // )
+  
+  // v(1.2em)
+  // grid(
+  //   rows: 2,
+  //   columns: 2,
+  //   gutter: .55em,
+  //   [Course:], [#course],
+  //   [Topic:], [#topic],
+  // )
+  
+  grid(
+    columns: (1fr, 1fr),
+    rows: 2,
+    gutter: 3em,
+    align: (left + horizon, right),
+    [
+      #text(size: 2em, weight: "bold", title)
+    ], 
+    [
+      #grid(
+          columns: 2,
+          align: (left, left),
+          gutter: .55em,
+          [Date: ], [#icu.fmt(date, locale: "en-US", length: "long")],
+          [Name: ], [#author],
+          [Group: ], [#group],
+          [Email: ], [#email],
+        )
+    ],
+    [
+      #grid(
+        rows: 2,
+        columns: 2,
+        gutter: .55em,
+        [Course:], [#course],
+        [Topic:], [#topic],
+      )
+    ]
+  )
+  
+  v(1.2em)
   
   line(length: 100%)
   
