@@ -6,7 +6,7 @@
 #let margin = (rest: 2.5cm)
 #let leading = 0.65em
 
-#let tty(
+#let patt(
   title: [Title],
   author: "Firstname Lastname",
   email: "f.lastname@innopolis.university",

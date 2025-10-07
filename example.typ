@@ -2,10 +2,10 @@
 
 #import "@preview/cetz:0.4.2": angle, canvas, draw
 #import "@preview/lilaq:0.5.0" as lq
-#import "../tty/lib.typ": *
+#import "patt/lib.typ": *
 
 
-#show: tty.with(
+#show: patt.with(
   title: lorem(6),
   author: "John Doe",
   group: "B24-CSE-07",
@@ -14,7 +14,7 @@
   course: lorem(4),
   topic: lorem(5),
   fontsize: 10pt,
-  bibliography: bibliography(title: "References", "refs.yml"),
+  bibliography: none,
 )
 
 #task(
@@ -23,6 +23,6 @@
     #lorem(50) 
   ],
   solution: [
-    #lorem(90) @cormen
+    #lorem(90)
   ]
 )
