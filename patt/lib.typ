@@ -72,7 +72,7 @@
   set enum(
     indent: .8em,
     spacing: 1em,
-    numbering: "(a)",
+    numbering: "(1)",
   )
 
   set table(
