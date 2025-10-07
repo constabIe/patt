@@ -13,67 +13,48 @@
   margin: (rest: 2.5cm),
   leading: .65em,
 ) = {
+  let top-bottom-indent = 1.2em
+
+  v(2 * top-bottom-indent)
   line(length: 100%)
-  
-  v(1.2em)
-  
-  // grid(
-  //   columns: (1fr, 1fr),
-  //   align: (left + horizon, right),
-  //   text(size: 2em, weight: "bold", title),
-  //   grid(
-  //     columns: 2,
-  //     align: (left, left),
-  //     gutter: .55em,
-  //     [Date: ], [#icu.fmt(date, locale: "en-US", length: "long")],
-  //     [Name: ], [#author],
-  //     [Group: ], [#group],
-  //     [Email: ], [#email],
-  //   )
-  // )
-  
-  // v(1.2em)
-  // grid(
-  //   rows: 2,
-  //   columns: 2,
-  //   gutter: .55em,
-  //   [Course:], [#course],
-  //   [Topic:], [#topic],
-  // )
-  
+
+  v(top-bottom-indent)
   grid(
     columns: (1fr, 1fr),
     rows: 2,
-    gutter: 3em,
+    column-gutter: .55em,
     align: (left + horizon, right),
     [
       #text(size: 2em, weight: "bold", title)
-    ], 
-    [
-      #grid(
-          columns: 2,
-          align: (left, left),
-          gutter: .55em,
-          [Date: ], [#icu.fmt(date, locale: "en-US", length: "long")],
-          [Name: ], [#author],
-          [Group: ], [#group],
-          [Email: ], [#email],
-        )
     ],
     [
       #grid(
-        rows: 2,
         columns: 2,
+        align: (left, left),
         gutter: .55em,
-        [Course:], [#course],
-        [Topic:], [#topic],
+        [Date: ], [#icu.fmt(date, locale: "en-US", length: "long")],
+        [Name: ], [#author],
+        [Group: ], [#group],
+        [Email: ], [#email],
       )
-    ]
+    ],
   )
-  
-  v(1.2em)
-  
+
+  if course != none and topic != none {
+    v(top-bottom-indent)
+
+    grid(
+      rows: 2,
+      columns: 2,
+      gutter: .55em,
+      [Course:], [#course],
+      [Topic:], [#topic],
+    )
+  }
+
+  v(top-bottom-indent)
+
   line(length: 100%)
-  
-  v(margin.rest)
+
+  v(2 * top-bottom-indent + margin.rest)
 }

@@ -12,8 +12,8 @@
   email: "f.lastname@innopolis.university",
   group: "Group",
   date: datetime.today(),
-  course: [Some course],
-  topic: [Some topic],
+  course: none,
+  topic: none,
   bibliography: none,
   fontsize: 11pt,
   body,
@@ -41,8 +41,14 @@
     header: context {
       if (here().page() != 1) { page_header }
     },
-    numbering: "1",
-    number-align: right,
+    numbering: (ns, c) => {
+      if ns != 1 {
+        ns
+      } else {
+        ""
+      }
+    },
+    number-align: center + bottom,
   )
 
   set text(
@@ -50,10 +56,12 @@
     size: fontsize,
     lang: "en",
   )
+  
+  show heading: set block(above: 1.4em, below: 1em)
 
   set par(
     justify: true,
-    linebreaks: "optimized",
+    linebreaks: "optimized"
   )
 
   set list(
@@ -88,7 +96,7 @@
   )
 
   // <------------------=| Main content |=------------------->
-  if body != none {
+  if body != none {  
     paperheader(
       title: title,
       date: date,
@@ -97,12 +105,14 @@
       email: email,
       course: course,
       topic: topic,
+      margin: margin,
+      leading: leading,
     )
     
     body
     
     if bibliography != none {
-      pagebreak()
+      pagebreak(weak: true)
       bibliography
     }
   }  

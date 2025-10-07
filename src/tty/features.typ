@@ -26,27 +26,22 @@
       linebreak()
       v(-1.2em)
       block(width: 100%)[
-        #text(weight: "bold", style: "italic")[Solution.$thick$] #solution #h(1fr) $qed$
+        #text(weight: "bold", style: "italic")[Solution.$space$] #solution #h(1fr) $qed$
       ]
       
       if newpage {
         pagebreak(weak: true)
-      } else {
-        for i in range(1, 5) { linebreak() }
-      }
-    } else {
-      for i in range(1, 5) { linebreak() }
-    }
+      } 
+    } 
   }
 }
-
-#let answer-sing = text(weight: "bold", style: "italic")[Answer.]
 
 #let answer(body) = {
   grid(
     columns: 2,
-    column-gutter: leading,
+    column-gutter: .55em,
     align: (center + horizon, left),
-    text(weight: "bold", style: "italic")[Answer.], rect(stroke: .5pt, body),
+    text(weight: "bold", style: "italic")[Answer.],
+    rect(stroke: .5pt, body),
   )
 }
