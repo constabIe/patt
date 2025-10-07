@@ -6,6 +6,5 @@
 > The template created by [Typst](https://typst.app/) &mdash; a new markup-based typesetting system that is designed to be as powerful as LaTeX while being much easier to learn and use.
 
 ## Build
-Navigate to `hwXX` folder and compile the paper using one of the following methods:
 - [Online editor](https://typst.app)
 - [VSCode extension](https://github.com/Myriad-Dreamin/tinymist)
