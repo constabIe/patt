@@ -94,6 +94,9 @@
     inset: 10pt,
     radius: 4pt,
   )
+  
+  show link: set text(fill: blue)
+  show link: underline
 
   // <------------------=| Main content |=------------------->
   if body != none {  
