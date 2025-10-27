@@ -10,15 +10,11 @@
   email: none,
   course: none,
   topic: none,
-  margin: (rest: 2.5cm),
-  leading: .65em,
-) = {
-  let top-bottom-indent = 1.2em
-
-  v(2 * top-bottom-indent)
+) = context {
+  // v(2 * par.spacing)
   line(length: 100%)
 
-  v(top-bottom-indent)
+  v(par.spacing)
   grid(
     columns: (1fr, 1fr),
     rows: 2,
@@ -41,7 +37,7 @@
   )
 
   if course != none and topic != none {
-    v(top-bottom-indent)
+    v(par.spacing)
 
     grid(
       rows: 2,
@@ -52,9 +48,9 @@
     )
   }
 
-  v(top-bottom-indent)
+  v(par.spacing)
 
   line(length: 100%)
-
-  v(2 * top-bottom-indent + margin.rest)
+  
+  v( + 2.5 / 21 * page.width)
 }

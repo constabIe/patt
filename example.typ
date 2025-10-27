@@ -6,15 +6,14 @@
 
 
 #show: patt.with(
-  title: lorem(6),
+  title: lorem(3),
   author: "John Doe",
-  group: "B24-CSE-07",
+  group: "A113",
   email: "j.doe@email.com",
   date: datetime.today(),
   course: lorem(4),
   topic: lorem(5),
   fontsize: 10pt,
-  bibliography: none,
 )
 
 #task(

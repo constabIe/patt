@@ -3,9 +3,6 @@
 #import "paperheader.typ": *
 #import "features.typ": *
 
-#let margin = (rest: 2.5cm)
-#let leading = 0.65em
-
 #let patt(
   title: [Title],
   author: "Firstname Lastname",
@@ -14,7 +11,7 @@
   date: datetime.today(),
   course: none,
   topic: none,
-  bibliography: none,
+  documenttitle: none,
   fontsize: 11pt,
   body,
 ) = {
@@ -25,9 +22,6 @@
     #line(length: 100%, stroke: .5pt)
   ]
 
-  let margin = margin
-  let leading = leading
-
   // <------------------=| Format rules |=------------------->
   set document(
     title: [#course, #title],
@@ -37,7 +31,6 @@
 
   set page(
     paper: "a4",
-    margin: margin,
     header: context {
       if (here().page() != 1) { page_header }
     },
@@ -100,23 +93,20 @@
 
   // <------------------=| Main content |=------------------->
   if body != none {  
-    paperheader(
-      title: title,
-      date: date,
-      author: author,
-      group: group,
-      email: email,
-      course: course,
-      topic: topic,
-      margin: margin,
-      leading: leading,
-    )
+    if documenttitle != none {
+      documenttitle
+    } else {
+      paperheader(
+        title: title,
+        date: date,
+        author: author,
+        group: group,
+        email: email,
+        course: course,
+        topic: topic,
+      )
+    }
     
     body
-    
-    if bibliography != none {
-      pagebreak(weak: true)
-      bibliography
-    }
   }  
 }
