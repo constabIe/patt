@@ -4,7 +4,7 @@
 
 #let paperheader(
   title: none,
-  date: datetime.today(),
+  date: none,
   author: none,
   group: none,
   email: none,
@@ -51,6 +51,6 @@
   v(par.spacing)
 
   line(length: 100%)
-  
-  v( + 2.5 / 21 * page.width)
+
+  v(+2.5 / 21 * page.width)
 }

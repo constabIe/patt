@@ -49,12 +49,12 @@
     size: fontsize,
     lang: "en",
   )
-  
+
   show heading: set block(above: 1.4em, below: 1em)
 
   set par(
     justify: true,
-    linebreaks: "optimized"
+    linebreaks: "optimized",
   )
 
   set list(
@@ -87,12 +87,12 @@
     inset: 10pt,
     radius: 4pt,
   )
-  
+
   show link: set text(fill: blue)
   show link: underline
 
   // <------------------=| Main content |=------------------->
-  if body != none {  
+  if body != none {
     if documenttitle != none {
       documenttitle
     } else {
@@ -106,7 +106,7 @@
         topic: topic,
       )
     }
-    
+
     body
-  }  
+  }
 }
