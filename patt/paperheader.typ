@@ -11,9 +11,8 @@
   course: none,
   topic: none,
 ) = context {
-  // v(2 * par.spacing)
   line(length: 100%)
-
+  
   v(par.spacing)
   grid(
     columns: (1fr, 1fr),
@@ -35,10 +34,10 @@
       )
     ],
   )
-
+  
   if course != none and topic != none {
     v(par.spacing)
-
+    
     grid(
       rows: 2,
       columns: 2,
@@ -47,10 +46,8 @@
       [Topic:], [#topic],
     )
   }
-
+  
   v(par.spacing)
-
+  
   line(length: 100%)
-
-  v(+2.5 / 21 * page.width)
 }
