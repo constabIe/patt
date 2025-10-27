@@ -7,7 +7,7 @@
   description: none,
   solution: none,
   newpage: true,
-) = {
+) = context {
   if description != none {
     block(width: 100%)[
       #if name != none [
@@ -17,14 +17,14 @@
     ]
     
     if solution != none {
-      // v(-2 * par.leading)
+      v(-2 * par.leading)
       linebreak()
       line(
         length: 100%,
         stroke: (thickness: .25pt, dash: (6.21pt, 6.21pt)),
       )
       linebreak()
-      // v(-2 * par.leading)
+      v(-2 * par.leading)
       block(width: 100%)[
         #text(weight: "bold", style: "italic")[Solution.$space$] #solution #h(1fr) $qed$
       ]
