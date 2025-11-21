@@ -45,4 +45,4 @@
   )
 }
 
-#let vanswer = context v(-2 * par.spacing)
+#let vanswer = context v(-(par.spacing + par.leading))
