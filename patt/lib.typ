@@ -82,12 +82,10 @@
     show link: set text(fill: blue)
     show link: underline
     
-    let height = -1em
     if documenttitle != none {
       documenttitle
-      height = measure(documenttitle).height
     } else {
-      let _p = paperheader(
+      paperheader(
         title: title,
         date: date,
         author: author,
@@ -96,12 +94,8 @@
         course: course,
         topic: topic,
       )
-      _p
-      height = measure(_p).height
     }
-    
     v(2.5 / 21 * page.width)
-    v(-height)
     
     body
   }
