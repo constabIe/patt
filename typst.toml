@@ -1,0 +1,10 @@
+[package]
+name = "patt"
+version = "0.1.0"
+entrypoint = "src/lib.typ"
+authors = ["Almir Avhadiev <almir.avhadiev@gmail.com>"]
+license = "MIT"
+description = "Simmple technical assignment template."
+
+[template]
+entrypoint = "template.typ"

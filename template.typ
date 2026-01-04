@@ -1,5 +1,5 @@
-#import "@preview/lilaq:0.5.0" as lq
-#import "patt/lib.typ": *
+// #import "src/lib.typ": *
+#import "@local/patt:0.1.0": *
 
 #show: patt.with(
   title: lorem(3),

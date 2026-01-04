@@ -1,7 +1,5 @@
 // (c) 2025 Almir Avhadiev <almir.avhadiev@gmail.com>
 
-// <------------------=| Functions |=------------------->
-
 #let task(
   name: "Task.",
   description: none,
