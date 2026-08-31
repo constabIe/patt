@@ -1,6 +1,6 @@
 // (c) 2025 Almir Avhadiev <almir.avhadiev@gmail.com>
 
-#import "@preview/icu-datetime:0.2.0" as icu
+#import "@preview/icu-datetime:0.2.2" as icu
 
 #let paperheader(
   title: none,
