@@ -13,7 +13,7 @@
       ]
       #description
     ]
-    
+
     if solution != none {
       v(-2 * par.leading)
       linebreak()
@@ -26,7 +26,7 @@
       block(width: 100%)[
         #text(weight: "bold", style: "italic")[Solution.$space$] #solution #h(1fr) $qed$
       ]
-      
+
       if newpage {
         pagebreak(weak: true)
       }
@@ -43,4 +43,4 @@
   )
 }
 
-#let vanswer = context v(-(par.spacing + par.leading))
+#let eop = context v(-(par.spacing + par.leading))

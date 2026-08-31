@@ -1,4 +1,4 @@
-// #import "src/lib.typ": *
+// #import "../lib.typ": *
 #import "@local/patt:0.1.0": *
 
 #show: patt.with(
@@ -9,16 +9,15 @@
   date: datetime.today(),
   course: lorem(2),
   topic: lorem(5),
-  fontsize: 10pt,
 )
 
 #task(
   name: [Problem $XX$.],
   description: [
-    #lorem(50) 
+    #lorem(50)
   ],
   solution: [
     #lorem(90)
-    #answer[#lorem(10)] #vanswer
-  ]
+    #answer[#lorem(10)] #eop
+  ],
 )

@@ -1,8 +1,21 @@
 // (c) 2025 Almir Avhadiev <almir.avhadiev@gmail.com>
+//
+// Private module: everything related to page and document headers.
 
 #import "@preview/icu-datetime:0.2.2" as icu
 
-#let paperheader(
+// Running header shown at the top of every page except the first one.
+#let _running-header(
+  author: none,
+  course: none,
+) = [
+  #course #h(1fr) #text[#author]
+  #v(-.77em)
+  #line(length: 100%, stroke: .5pt)
+]
+
+// Title block rendered at the top of the first page.
+#let _paperheader(
   title: none,
   date: none,
   author: none,
@@ -12,7 +25,7 @@
   topic: none,
 ) = context {
   line(length: 100%)
-  
+
   v(par.spacing)
   grid(
     columns: (1fr, 1fr),
@@ -34,10 +47,10 @@
       )
     ],
   )
-  
+
   if course != none and topic != none {
     v(par.spacing)
-    
+
     grid(
       rows: 2,
       columns: 2,
@@ -46,8 +59,8 @@
       [Topic:], [#topic],
     )
   }
-  
+
   v(par.spacing)
-  
+
   line(length: 100%)
 }
